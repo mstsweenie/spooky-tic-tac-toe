@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-square',
   templateUrl: './square.component.html',
   styleUrls: ['./square.component.scss']
 })
-export class SquareComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class SquareComponent  {
+  @Input () value: 'bones' | 'pumpkin'
 
 }
+  //constructor() { }
+
+  //ngOnInit(): void { }
+
 //import { Component, Input } from '@angular/core';
 
 //@Component({
