@@ -2,18 +2,15 @@
 
 <button mat-raised-button color="primary" (click)="newGame()">Start new Game</button>
 
-
 <h2 *ngIf="winner">
-    Player {{ winner }} won the game!
+    {{ winner }} wins!
 </h2>
-
 
 <main>
     <app-square 
-        *ngFor="let val of squares; let i = index" 
+        *ngFor="let val of squares; let i = index"
         [value]="val"
-        (click)="makeMove(i)"> 
-
+        (click)="makeMove(i)">
     </app-square>
 </main>
 

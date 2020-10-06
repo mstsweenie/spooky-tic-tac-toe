@@ -13,13 +13,15 @@ import { BoardComponent } from './board/board.component';
 import { SquareComponent } from './square/square.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
+import { SplashPageComponent } from './splash-page/splash-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     BoardComponent,
-    SquareComponent
+    SquareComponent,
+    SplashPageComponent
   ],
   imports: [
     BrowserModule,
