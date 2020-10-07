@@ -1,12 +1,17 @@
 <div class="container">
-    <div calss="row"></div>
-    <h1>Spooky Tic-Tac-Toe</h1>
-    <!--<h2>"There is magic in the night when pumkins glow by moonlight."</h2>-->
-    <h2>{{ dadJoke }}</h2>
-    <div id="splash-image-anchor"></div>
-    
-    <div class="button">
-        <button mat-raised-button color="primary" (click)="goGame()">Play</button>
+    <div calss="row">
+        <div class="col-md-6">
+            <h1>Spooky Tic-Tac-Toe</h1>
+            <!--<h2>"There is magic in the night when pumkins glow by moonlight."</h2>-->
+            <h2>{{ dadJoke }}</h2>
+        </div>
+        <div class="col-md-6">
+            <div id="splash-image-anchor"></div>
+            
+            <div class="button">
+                <button mat-raised-button color="primary" (click)="goGame()">Play</button>
+            </div>
+        </div>
     </div>
 </div>
 
