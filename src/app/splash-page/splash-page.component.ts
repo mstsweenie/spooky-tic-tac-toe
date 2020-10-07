@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { JokeService } from '../services/joke.service';
 
 @Component({
   selector: 'app-splash-page',
@@ -7,14 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./splash-page.component.scss']
 })
 export class SplashPageComponent implements OnInit {
+  dadJoke: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private jokeService: JokeService) { }
 
   ngOnInit(): void {
-  }
+    this.jokeService.getJoke().then((data => {
+      let ranNum = Math.floor(Math.random() * data.results.length);
+      this.dadJoke = data.results[ranNum].joke;
+    }));
+  } 
 
   goGame(): void {
-    console.log("Working");
     this.router.navigate(['/login']);
   }
 
