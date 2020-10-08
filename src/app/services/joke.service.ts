@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +9,14 @@ export class JokeService {
 
   constructor(private http: HttpClient) { }
 
-  getJoke(): Promise<any> {
-    const jokeFilter = ["witch", "skeleton", "ghost"];
+  getJoke(): Observable<any> {
+    const jokeFilter = ["pumpkin", "skeleton", "ghost"];
     // pull a random string from the jokeFilter array
     let jokeSearchString = Math.floor(Math.random() * jokeFilter.length);
     const apiUrl = `https://icanhazdadjoke.com/search?term=${ jokeFilter[jokeSearchString] }`;
     const headers = { 'Accept': 'application/json' }
 
-    return this.http.get<any>(apiUrl, { headers }).toPromise();
+    return this.http.get<any>(apiUrl, { headers });
 
     //let resultPromise = fetch(apiUrl, {
     //  headers: {

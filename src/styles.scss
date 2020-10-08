@@ -1,12 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #aaa; }
-@import '~@angular/material/theming';
-@include mat-core();
-//@include angular-material-theme($myapp-theme);
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
 
-//$myapp-primary: mat-palette($mat-indigo);
-//$myapp-accent: mat-palette($mat-pink, A200, A100, A400);
-//$myapp-warn: mat-palette($mat-red);
-//$myapp-theme: mat-light-theme($myapp-primary, $myapp-accent, $myapp-warn);
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin-left: 10px; 
+    font: normal small-caps bold 12px/30px 'Fruktur', cursive;
+    background-color: rgb(118, 0, 191); 
+}
+
+.h1, h1 {
+    font-size: 3rem;
+    color: rgb(240, 177, 16);
+}
+
+.h2, h2 { 
+    font-size: 2.5rem;
+    color: rgb(225, 86, 0);
+}
