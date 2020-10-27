@@ -13,7 +13,7 @@ export class JokeService {
     const jokeFilter = ["pumpkin", "skeleton", "ghost"];
     // pull a random string from the jokeFilter array
     let jokeSearchString = Math.floor(Math.random() * jokeFilter.length);
-    const apiUrl = `https://icanhazdadjoke.com/search?term=${ jokeFilter[jokeSearchString] }`;
+    const apiUrl = `https://icanhazdadjoke.com/search?term=${jokeFilter[jokeSearchString]}`;
     const headers = { 'Accept': 'application/json' }
 
     return this.http.get<any>(apiUrl, { headers });
