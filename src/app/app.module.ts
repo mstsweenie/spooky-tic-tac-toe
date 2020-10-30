@@ -14,6 +14,10 @@ import { SquareComponent } from './square/square.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
 import { SplashPageComponent } from './splash-page/splash-page.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,9 @@ import { SplashPageComponent } from './splash-page/splash-page.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    AngularFireModule.initializeApp(environment.firebase, 'Spooky Tic-Tac-Toe'),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
