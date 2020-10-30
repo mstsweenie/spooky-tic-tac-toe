@@ -7,6 +7,11 @@ main {
     grid-template-columns: 200px 200px 200px;
     grid-gap: 0px;
 }
+#player-board {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
   
 app-square {
     border: 1px purple solid;

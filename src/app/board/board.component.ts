@@ -10,8 +10,11 @@ export class BoardComponent implements OnInit {
   squares: string[];
   xIsNext: boolean;
   winner: string;
+  gameOver: boolean;
+  tieGame: boolean;
+  boardFull: boolean;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.newGame();
@@ -21,19 +24,33 @@ export class BoardComponent implements OnInit {
     this.squares = Array(9).fill(null);
     this.winner = null;
     this.xIsNext = true;
+    this.boardFull = false;
+    this.gameOver = false;
+    this.tieGame = false;
   }
+
+
 
   get player() {
     return this.xIsNext ? 'Bones' : 'Pumpkin';
   }
 
   makeMove(idx: number) {
-    if (!this.squares[idx]) {
-      this.squares.splice(idx, 1, this.player);
-      this.xIsNext = !this.xIsNext;
-    }
+    if (!this.gameOver) {
+      if (!this.squares[idx]) {
+        this.squares.splice(idx, 1, this.player);
+        this.xIsNext = !this.xIsNext;
+      }
 
-    this.winner = this.calculateWinner();
+      this.winner = this.calculateWinner();
+      let boardFull = this.squares.every((val) => val !== null)
+      if (boardFull || this.winner !== null) {
+        this.gameOver = true;
+      }
+      if (boardFull && this.winner === null) {
+        this.tieGame = true;
+      }
+    }
   }
 
   calculateWinner() {
