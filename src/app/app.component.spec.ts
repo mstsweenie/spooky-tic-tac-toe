@@ -30,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('spooky-tic-tac-toe app is running!');
+    expect(compiled.querySelector('header').textContent).toContain('Spooky-Tic-Tac-Toe!');
   });
 });

@@ -6,6 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./square.component.scss']
 })
 export class SquareComponent  {
+  fixture(fixture: any) {
+    throw new Error('Method not implemented.');
+  }
   @Input () value: 'Bones' | 'Pumpkin'
 
 }

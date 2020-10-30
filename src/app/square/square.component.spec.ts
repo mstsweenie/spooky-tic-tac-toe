@@ -14,7 +14,7 @@ describe('SquareComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SquareComponent);
+    const fixture = TestBed.createComponent(SquareComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
